@@ -1,12 +1,26 @@
 <!doctype html>
-<html ng-app="StreetMusicConcertModule">
+<html ng-app="CitySearchModule">
 <head>
-    <title>Hello AngularJS</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    <script src="CityController.js"></script>
+    <title>Streetmusic Concert</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/City/CityController.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/CitySearch.css">
 </head>
 
 <body>
+<div class="wrapper text-center" ng-controller="CitySearchController">
+    <div class="text-wrapper">
+        <div class="search-wrapper">
+            <input type="text" class="input" ng-model="searchString" placeholder="enter your search terms">
+        </div>
+        <div class="result-wrapper" ng-repeat="item in items | searchFilter: searchString">
+            <a href="{{ item.url }}">
+                <p class="result-text">{{ item.title }}</p>
+            </a>
+        </div>
+    </div>
+</div>
+
 <div ng-controller="Cities">
     <p>The ID is {{greeting.id}}</p>
     <p>The content is {{greeting.content}}</p>
