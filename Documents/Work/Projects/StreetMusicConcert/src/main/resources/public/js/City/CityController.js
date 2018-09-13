@@ -29,7 +29,7 @@ citySearchModule.filter('searchFilter', function() {
 });
 
 citySearchModule.controller('Cities', function($scope, $http) {
-    $http.get('http://localhost:8080/cityByName').
+    $http.get('http://localhost:8080/city/Dresden').
         then(function(response) {
             $scope.city = response.data;
         });
