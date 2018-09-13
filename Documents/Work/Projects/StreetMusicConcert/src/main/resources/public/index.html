@@ -10,20 +10,21 @@
 <body>
 <div class="wrapper text-center" ng-controller="CitySearchController">
     <div class="text-wrapper">
-        <div class="search-wrapper">
-            <input type="text" class="input" ng-model="searchString" placeholder="enter your search terms">
+        <div>
+            Please, choose the city
         </div>
-        <div class="result-wrapper" ng-repeat="item in items | searchFilter: searchString">
-            <a href="{{ item.url }}">
-                <p class="result-text">{{ item.title }}</p>
-            </a>
+        <div class="search-wrapper">
+            <input type="text" class="input" ng-model="searchString" placeholder="enter city name">
+        </div>
+        <div class="result-wrapper" ng-repeat="city in cities | searchFilter: searchString">
+            <p class="result-text">{{ city.name }}</p>
         </div>
     </div>
 </div>
 
 <div ng-controller="Cities">
-    <p>The ID is {{greeting.id}}</p>
-    <p>The content is {{greeting.content}}</p>
+    <p>The ID is {{city.id}}</p>
+    <p>The content is {{city.content}}</p>
 </div>
 </body>
 </html>
