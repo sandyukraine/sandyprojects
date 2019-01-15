@@ -1,4 +1,4 @@
-var citySearchModule = angular.module('CitySearchModule', []);
+var citySearchModule = angular.module('CitySearchModule', ['ngRoute']);
 
 citySearchModule.controller('CitySearchController', function($scope, $http) {
     $http.get('http://localhost:8080/cities').

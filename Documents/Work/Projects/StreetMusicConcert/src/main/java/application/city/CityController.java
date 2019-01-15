@@ -20,7 +20,6 @@ public class CityController {
     @RequestMapping("/city/{name}")
     public City getCityByName(@PathVariable("name") String name) {
         return cityRepository.findByName(name);
-//        String result = "{\"id\":" + 123 + ",\"content\":\"" + city.getName() + "\"}";
     }
 
     @RequestMapping("/cities")
@@ -28,8 +27,8 @@ public class CityController {
         return cityRepository.findAll();
     }
 
-    @RequestMapping("/addCities")
-    public void addCities() {
+    @RequestMapping("/initCities")
+    public void initCities() {
         List<Place> places = new ArrayList<>();
         List<MusicalInstrument> musicalInstruments = new ArrayList<>();
         Schedule shedule = new Schedule();
