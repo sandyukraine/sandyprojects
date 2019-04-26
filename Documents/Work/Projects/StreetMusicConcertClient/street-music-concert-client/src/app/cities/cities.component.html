@@ -1,0 +1,14 @@
+<div class="caption">Cities</div>
+<div id="table">
+  <div class="header-row row">
+    <span class="cell primary">City name</span>
+    <span class="cell">Country</span>
+    <span class="cell">Is permission required?</span>
+  </div>
+  <div class="row" *ngFor="let city of cities">
+    <input type="radio" name="expand"> <!-- TODO: maybe use this later -->
+    <span class="cell primary" data-label="Cities">{{city.name}}</span>
+    <span class="cell" data-label="Country">{{city.country}}</span>
+    <span class="cell" data-label="Is permission required?">{{city.permissionNeeded}}</span>
+  </div>
+</div>
